@@ -7,7 +7,7 @@ Data replication toolkit for OpenEdge Progress DB to MySQL/Postgres/other RDBMS.
 3. Modular architecture making it trivial to add new target DB back-ends
 4. Very fast: an initial "full load" of replicated of 300GB data set completed in 45m
 5. No downtime! The Progress DB never has to be stopped or taken out of service to start replicating
-6. Open source - all code is licensed as GPLv3.
+6. Open source - all code is licensed as GPLv3
 
 ### What is Progress? Why do I want to replicate it?
 Progress is a proprietary database system from 1981 that is still in use today. Queries are built using "ABL"(or "4gl") syntax, a feature-poor and unsuitable replacement for SQL. Replication allows you to use traditional SQL and reporting tools that work on SQL databases to access your data.
