@@ -1,0 +1,23 @@
+#!/bin/bash
+DEFAULTDB="" # TODO
+if [ $# -lt 1 ] 
+then
+    echo "Progress batch ABL tool"
+    echo "usage: $0 <progress_file> [progress_database]"
+    echo "       [progress_database] defaults to '$DEFAULTDB'"
+    exit 1
+fi
+RAND=$(openssl rand -hex 16)
+OLDTERM=$TERM
+TERM=xterm
+if [ $# -eq 2 ]
+then
+    #echo "using: $2"
+    ..../progress/bin/_progres $2 -b -p $1 > /tmp/progress_$RAND # TODO
+else
+    #echo "using: $DEFAULTDB"
+    ..../progress/bin/_progres $DEFAULTDB -b -p $1 > /tmp/progress_$RAND # TODO
+fi
+TERM=$OLDTERM
+cat /tmp/progress_$RAND
+rm -f /tmp/progress_$RAND
